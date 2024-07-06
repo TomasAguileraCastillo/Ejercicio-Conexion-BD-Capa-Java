@@ -24,7 +24,7 @@
 			<br/><br/>
 			</div>
 			<section id="seccionForm">
-				<form method="post" action="${pageContext.request.contextPath}/actorDetails">
+				<form id="form1" method="post" action="${pageContext.request.contextPath}/actorDetails">
 					<input type="hidden" id="id" name="id" value= "">
 					<div class="row mb-3">
 						<div class="">
@@ -43,7 +43,7 @@
 					<hr/>		
 					<div class="justify-content-end">
 						<button type="submit" class="btn btn-secondary">Agregar Registro</button>
-						<button type="button" class="btn btn-danger" id="btnCancela" >Cancelar</button>
+						<button type="button" class="btn btn-danger" id="btnCancela"   >Cancelar</button>
 					</div>
 				</form>
 			</section>
@@ -115,10 +115,15 @@
 			
 			
 		});
+		function myFunction() {
+					
+				}
 		
 		$(btnCancela).click(function(){
+			document.getElementById("form1").reset();
 			if (ocultar){
 				//form.hide();
+				
 				ocultar = false;
 			}else {
 				btnAgr.show();
