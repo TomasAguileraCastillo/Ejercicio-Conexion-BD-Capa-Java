@@ -17,29 +17,33 @@
 		<div class="container sm">
 			<br/><br/>
 			<div>
-				<a class="btn btn-dark" href="#" role="button" id="mostrar" onclick="ocultaMuestra()" >Agregar Registro 
+				<a class="btn btn-dark" href="#" role="button" id="btnAgregarR"   >Agregar Registro 
 					<i class="bi bi-file-earmark-plus"></i>
 				</a>
-				<button onclick="ocultaMuestra()">Clickeame</button>
+			 
 			<br/><br/>
 			</div>
 			<section id="seccionForm">
-				<form>
+				<form method="post" action="${pageContext.request.contextPath}/actorDetails">
+					<input type="hidden" id="id" name="id" value= "">
 					<div class="row mb-3">
-						<div class="form-floating">
-							<input type="text" class="form-control" id="floatingInputValue" placeholder="Nombre" value="">
-							<label class="" for="floatingTextarea">Nombre : </label>
+						<div class="">
+						<label class="" >Nombre : </label>
+							<input type="text" class="form-control" id="nombre" name="nombre"  value="" required>
+							
 						</div>
 					</div>
 					<div class="row mb-3">
-						<div class="form-floating">
-							<input type="text" class="form-control" id="floatingInputValue" placeholder="Nombre" value="">
+						<div class=" ">
 							<label class="" for="floatingTextarea">Apellido : </label>
+							<input type="text" class="form-control" id="apellido" name="apellido" value="" required>
+							
 						</div>
 					</div>
 					<hr/>		
 					<div class="justify-content-end">
-						<button type="submit" class="btn btn-secondary">Sign in</button>
+						<button type="submit" class="btn btn-secondary">Agregar Registro</button>
+						<button type="button" class="btn btn-danger" id="btnCancela" >Cancelar</button>
 					</div>
 				</form>
 			</section>
@@ -85,9 +89,54 @@
 	</main>
 <jsp:include page="footer.jsp"></jsp:include>	
 	<script>
+	$(document).ready( function () {
+		$('#tblActores').DataTable();
+	} );
+	
+	
+	
+	
+	//funcion para ocultar formulario de registroi 	
+	$(function (){
+		let form = $('#seccionForm');
+		let btnAgr = $('#btnAgregarR')
+		form.hide();
+		let ocultar = true;
+		
+		$(btnAgr).click(function(){
+			if (ocultar){
+				form.show();
+				btnAgr.hide();
+				ocultar = false;
+			}else {
+				form.hide();
+				ocultar = true;
+			}
+			
+			
+		});
+		
+		$(btnCancela).click(function(){
+			if (ocultar){
+				//form.hide();
+				ocultar = false;
+			}else {
+				btnAgr.show();
+				form.hide();
+				ocultar = true;
+			}
+			
+			
+		});
 		
 		
 		
+		
+		
+	});	
+	
+	
+	
 		 
 		
 	</script>

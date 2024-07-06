@@ -10,10 +10,27 @@ import java.util.List;
 import cl.praxis.model.conexion.Conexion;
 import cl.praxis.model.dto.Actor;
 
-public class ActorDAO {
+public class ActorDAO  {
+	
+	
+	
 	
 	public void crear( Actor a) {
 	//Implementacion logica de creacion de registro
+		
+		String sql = "insert into actor (first_name, last_name) values ('" + a.getFirstname() + "', '" + a.getLastname() + "')";
+
+		System.out.println(sql);
+		
+		
+		try {
+			Connection c = Conexion.getConn();
+			Statement s = c.createStatement();
+			s.execute(sql);
+		}  catch (SQLException e) {
+			System.out.println("ERROR en método create()");
+			e.printStackTrace();
+		}
 		
 	}
 	public Actor read(int id) {
@@ -67,7 +84,7 @@ public class ActorDAO {
 		
 		
 	}
-	
+	 
 	
 	
 	

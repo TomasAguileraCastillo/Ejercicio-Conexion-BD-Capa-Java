@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import cl.praxis.model.dao.ActorDAO;
+ 
 import cl.praxis.model.dto.Actor;
 
  
@@ -27,6 +28,7 @@ public class ActorController extends HttpServlet {
 		
 		//comprobando si funciona 
 		
+	
  		ActorDAO aDAO = new ActorDAO();
  		//trae la info desde la BD
  		List<Actor> actores = aDAO.read();
