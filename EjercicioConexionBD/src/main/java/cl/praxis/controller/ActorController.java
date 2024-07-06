@@ -45,7 +45,7 @@ public class ActorController extends HttpServlet {
  		
  		request.setAttribute("actores", actores);
  		
- 		getServletContext().getRequestDispatcher("/views/actors.jsp").forward(request, response);
+ 		getServletContext().getRequestDispatcher("/views/actores.jsp").forward(request, response);
  		
  		
  		
