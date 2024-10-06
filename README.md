@@ -1,4 +1,4 @@
-Ejercicio de conexion a BD en Capas 
+Ejercicio de conexion a BD en Capas
 
 Se adjuntan imagenes 
 
