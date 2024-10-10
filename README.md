@@ -1,6 +1,6 @@
 Ejercicio de conexion a BD en Capas
 
-Se adjuntan imagenes 
+Se adjuntan  imagenes  
 
 ![image](https://github.com/TomasAguileraCastillo/Ejercicio-Conexion-BD-Capa-Java/assets/136927556/f2c8bfb6-78e3-4db8-9b98-f6d9d62638f4)
 
